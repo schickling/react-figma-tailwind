@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run build:clean && npm run build:lib",
     "build:clean": "rimraf dist",
-    "build:lib": "cross-env BABEL_ENV=production babel src --out-dir dist --ignore '**/__tests__/**'",
+    "build:lib": "BABEL_ENV=production babel src --out-dir dist --ignore '**/__tests__/**'",
     "test": "jest",
     "prepublish": "npm run test && npm run build"
   },

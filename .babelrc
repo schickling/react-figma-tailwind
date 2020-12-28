@@ -1,5 +1,6 @@
 {
   "presets": ["@babel/env", "@babel/typescript", "@babel/react"],
   "plugins": [
+    "./plugin/src"
   ]
 }

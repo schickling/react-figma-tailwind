@@ -1,0 +1,43 @@
+{
+  "name": "babel-plugin-react-figma-tailwind",
+  "version": "0.0.0",
+  "description": "Babel plugin for react-figma-tailwind",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "npm run build:clean && npm run build:lib",
+    "build:clean": "rimraf dist",
+    "build:lib": "cross-env BABEL_ENV=production babel src --out-dir dist --ignore '**/__tests__/**'",
+    "test": "jest",
+    "prepublish": "npm run test && npm run build"
+  },
+  "keywords": [
+    "react",
+    "babel"
+  ],
+  "author": "Ilya Lesik <ilialesik@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/helper-plugin-utils": "^7.0.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@babel/types": "^7.3.2",
+    "babel-test": "^0.1.2",
+    "jest": "^26.6.3",
+    "jest-file-snapshot": "^0.3.2"
+  },
+  "devDependencies": {
+    "@babel/helper-plugin-test-runner": "^7.1.0",
+    "babel-core": "^7.0.0-bridge.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "snapshotSerializers": [
+      "<rootDir>/test/whitespaceTrimmingSerializer.js"
+    ],
+    "watchPathIgnorePatterns": [
+      "fixtures\\/[^/]+\\/(output|error)\\.js"
+    ]
+  }
+}

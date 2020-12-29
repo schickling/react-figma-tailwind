@@ -3,6 +3,20 @@ import * as ReactDOM from 'react-dom'
 // import { App } from './App'
 // import './index.css'
 
+// function domToFigma(el: JSX.Element): JSX.Element {}
+
+const LowerX: React.FC<{
+  className: string
+  div: React.FC<React.HTMLAttributes<HTMLDivElement>>
+}> = ({ children, div: Div2, ...props }) => <Div2 {...props}>{children}</Div2>
+
+const x = (
+  <LowerX className="test" div={() => <div />}>
+    <span>yo</span>test
+  </LowerX>
+)
+// window.x = x
+
 ReactDOM.render(
   <React.StrictMode>
     <div>hello</div>

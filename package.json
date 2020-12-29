@@ -11,9 +11,14 @@
   "license": "ISC",
   "devDependencies": {
     "@figma/plugin-typings": "^1.19.0",
+    "@snowpack/plugin-postcss": "^1.0.11",
     "@snowpack/plugin-react-refresh": "^2.3.9",
     "@snowpack/plugin-typescript": "^1.1.1",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "autoprefixer": "^10.1.0",
     "html-webpack-plugin": "^4.5.0",
+    "postcss": "^8.2.1",
     "react-figma-webpack-config": "^0.0.7",
     "snowpack": "^2.18.5",
     "ts-loader": "^8.0.12",
@@ -26,6 +31,8 @@
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-figma": "^0.3.1"
+    "react-figma": "^0.3.1",
+    "tailwind-rn": "^3.0.0",
+    "tailwindcss": "^2.0.2"
   }
 }

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Frame, Page, View, Text, Component, StyleSheet } from 'react-figma'
+import { Div } from './base-components'
 
 import * as facebookIcon from './icons/001-facebook.png'
 import * as twitterIcon from './icons/002-twitter.png'
@@ -51,20 +52,20 @@ const SpaceFrame = () => {
       <Component name="SizingXSmall" style={styles.component}>
         <View style={[styles.sizingBlock, { width: 8, height: 8 }]} />
       </Component>
-      <Text style={styles.sizingDescription}>X-Small</Text>
-      <Text style={styles.hint}>8px</Text>
+      <Div className="mt-1 text-sm">X-Small</Div>
+      <Div className="text-xs mt-0.5 text-gray-500">8px</Div>
 
       <Component name="SizingSmall" style={styles.component}>
         <View style={[styles.sizingBlock, { width: 16, height: 16 }]} />
       </Component>
-      <Text style={styles.sizingDescription}>Small</Text>
-      <Text style={styles.hint}>16px</Text>
+      {/* <Div style={styles.sizingDescription}>Small</Div>
+      <Div style={styles.hint}>16px</Div> */}
 
       <Component name="SizingMedium" style={styles.component}>
         <View style={[styles.sizingBlock, { width: 24, height: 24 }]} />
       </Component>
-      <Text style={styles.sizingDescription}>Medium</Text>
-      <Text style={styles.hint}>24px</Text>
+      {/* <Div style={styles.sizingDescription}>Medium</Div>
+      <Div style={styles.hint}>24px</Div> */}
 
       <Component name="SizingLarge" style={styles.component}>
         <View style={[styles.sizingBlock, { width: 44, height: 44 }]} />
@@ -157,10 +158,14 @@ const IconsFrame = (props) => {
   )
 }
 
-export const App = () => {
+export const NewApp = () => {
   return (
     <Page isCurrent name="Design system" style={{ flexDirection: 'row' }}>
       <SpaceFrame />
+      <Div className="inline-flex items-center px-6 py-3 bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <Div className="text-base font-medium text-white">Button text</Div>
+      </Div>
+
       <TypeFrame style={{ marginLeft: 50 }} />
       <IconsFrame style={{ marginLeft: 50 }} />
     </Page>

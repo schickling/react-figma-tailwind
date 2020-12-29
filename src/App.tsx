@@ -1,11 +1,18 @@
 import * as React from 'react'
+import tailwind from 'tailwind-rn';
 import { Frame, Page, View, Text, Component, StyleSheet } from 'react-figma'
 
+// @ts-ignore
 import facebookIcon from './icons/001-facebook.png'
+// @ts-ignore
 import twitterIcon from './icons/002-twitter.png'
+// @ts-ignore
 import whatsappIcon from './icons/003-whatsapp.png'
+// @ts-ignore
 import skypeIcon from './icons/006-skype.png'
+// @ts-ignore
 import youtubeIcon from './icons/008-youtube.png'
+// @ts-ignore
 import instagramIcon from './icons/011-instagram.png'
 
 const styles = StyleSheet.create({
@@ -45,45 +52,50 @@ const styles = StyleSheet.create({
 
 const SpaceFrame = () => {
   return (
-    <Frame name="Space" style={styles.frame}>
+    <View name="Space" style={tailwind('p-4')}>
       <Text style={styles.heading}>Space</Text>
 
       <Component name="SizingXSmall" style={styles.component}>
-        <View style={[styles.sizingBlock, { width: 8, height: 8 }]} />
+        {/* @ts-ignore */}
+        <div style={[styles.sizingBlock, { width: 8, height: 8 }]} />
       </Component>
       <Text style={styles.sizingDescription}>X-Small</Text>
       <Text style={styles.hint}>8px</Text>
 
       <Component name="SizingSmall" style={styles.component}>
-        <View style={[styles.sizingBlock, { width: 16, height: 16 }]} />
+          {/* @ts-ignore */}
+          <div style={[styles.sizingBlock, { width: 16, height: 16 }]} />
       </Component>
       <Text style={styles.sizingDescription}>Small</Text>
       <Text style={styles.hint}>16px</Text>
 
       <Component name="SizingMedium" style={styles.component}>
-        <View style={[styles.sizingBlock, { width: 24, height: 24 }]} />
+          {/* @ts-ignore */}
+          <div style={[styles.sizingBlock, { width: 24, height: 24 }]} />
       </Component>
       <Text style={styles.sizingDescription}>Medium</Text>
       <Text style={styles.hint}>24px</Text>
 
       <Component name="SizingLarge" style={styles.component}>
-        <View style={[styles.sizingBlock, { width: 44, height: 44 }]} />
+          {/* @ts-ignore */}
+          <div style={[styles.sizingBlock, { width: 44, height: 44 }]} />
       </Component>
       <Text style={styles.sizingDescription}>Large</Text>
       <Text style={styles.hint}>44px</Text>
 
       <Component name="SizingXLarge" style={styles.component}>
-        <View style={[styles.sizingBlock, { width: 64, height: 64 }]} />
+          {/* @ts-ignore */}
+          <div style={[styles.sizingBlock, { width: 64, height: 64 }]} />
       </Component>
       <Text style={styles.sizingDescription}>X-Large</Text>
       <Text style={styles.hint}>64px</Text>
-    </Frame>
+    </View>
   )
 }
 
 const TypeFrame = (props) => {
   return (
-    <Frame name="Type" style={[styles.frame, props.style]}>
+    <View name="Type" style={tailwind('p-4 ml-16')}>
       <Text style={styles.heading}>Type</Text>
 
       <Component name="HeaderH1" style={styles.component}>
@@ -120,13 +132,13 @@ const TypeFrame = (props) => {
         <Text style={{ fontSize: 11 }}>X-Small text</Text>
       </Component>
       <Text style={styles.hint}>11px</Text>
-    </Frame>
+    </View>
   )
 }
 
 const IconsFrame = (props) => {
   return (
-    <Frame name="Icons" style={[styles.frame, props.style]}>
+    <View name="Icons" style={tailwind('p-4 ml-16')}>
       <Text style={styles.heading}>Icons</Text>
 
       <Component name="IconFacebook" style={styles.component}>
@@ -147,7 +159,7 @@ const IconsFrame = (props) => {
       <Component name="IconInstagram" style={styles.component}>
         <View style={[styles.icon, { backgroundImage: instagramIcon }]} />
       </Component>
-    </Frame>
+    </View>
   )
 }
 
@@ -155,8 +167,8 @@ export const App = () => {
   return (
     <Page isCurrent name="Design system" style={{ flexDirection: 'row' }}>
       <SpaceFrame />
-      <TypeFrame style={{ marginLeft: 50 }} />
-      <IconsFrame style={{ marginLeft: 50 }} />
+      <TypeFrame />
+      <IconsFrame />
     </Page>
   )
 }

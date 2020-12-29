@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC } from 'react'
 import { Text, View } from 'react-figma'
 import tailwind from 'tailwind-rn'

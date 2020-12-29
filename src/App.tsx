@@ -52,45 +52,50 @@ const styles = StyleSheet.create({
 
 const SpaceFrame = () => {
   return (
-    <div name="Space" style={tailwind('p-4')}>
+    <View name="Space" style={tailwind('p-4')}>
       <Text style={styles.heading}>Space</Text>
 
       <Component name="SizingXSmall" style={styles.component}>
+        {/* @ts-ignore */}
         <div style={[styles.sizingBlock, { width: 8, height: 8 }]} />
       </Component>
       <Text style={styles.sizingDescription}>X-Small</Text>
       <Text style={styles.hint}>8px</Text>
 
       <Component name="SizingSmall" style={styles.component}>
-        <div style={[styles.sizingBlock, { width: 16, height: 16 }]} />
+          {/* @ts-ignore */}
+          <div style={[styles.sizingBlock, { width: 16, height: 16 }]} />
       </Component>
       <Text style={styles.sizingDescription}>Small</Text>
       <Text style={styles.hint}>16px</Text>
 
       <Component name="SizingMedium" style={styles.component}>
-        <div style={[styles.sizingBlock, { width: 24, height: 24 }]} />
+          {/* @ts-ignore */}
+          <div style={[styles.sizingBlock, { width: 24, height: 24 }]} />
       </Component>
       <Text style={styles.sizingDescription}>Medium</Text>
       <Text style={styles.hint}>24px</Text>
 
       <Component name="SizingLarge" style={styles.component}>
-        <div style={[styles.sizingBlock, { width: 44, height: 44 }]} />
+          {/* @ts-ignore */}
+          <div style={[styles.sizingBlock, { width: 44, height: 44 }]} />
       </Component>
       <Text style={styles.sizingDescription}>Large</Text>
       <Text style={styles.hint}>44px</Text>
 
       <Component name="SizingXLarge" style={styles.component}>
-        <div style={[styles.sizingBlock, { width: 64, height: 64 }]} />
+          {/* @ts-ignore */}
+          <div style={[styles.sizingBlock, { width: 64, height: 64 }]} />
       </Component>
       <Text style={styles.sizingDescription}>X-Large</Text>
       <Text style={styles.hint}>64px</Text>
-    </div>
+    </View>
   )
 }
 
 const TypeFrame = (props) => {
   return (
-    <div name="Type" style={tailwind('p-4 ml-16')}>
+    <View name="Type" style={tailwind('p-4 ml-16')}>
       <Text style={styles.heading}>Type</Text>
 
       <Component name="HeaderH1" style={styles.component}>
@@ -127,13 +132,13 @@ const TypeFrame = (props) => {
         <Text style={{ fontSize: 11 }}>X-Small text</Text>
       </Component>
       <Text style={styles.hint}>11px</Text>
-    </div>
+    </View>
   )
 }
 
 const IconsFrame = (props) => {
   return (
-    <div name="Icons" style={tailwind('p-4 ml-16')}>
+    <View name="Icons" style={tailwind('p-4 ml-16')}>
       <Text style={styles.heading}>Icons</Text>
 
       <Component name="IconFacebook" style={styles.component}>
@@ -154,7 +159,7 @@ const IconsFrame = (props) => {
       <Component name="IconInstagram" style={styles.component}>
         <View style={[styles.icon, { backgroundImage: instagramIcon }]} />
       </Component>
-    </div>
+    </View>
   )
 }
 

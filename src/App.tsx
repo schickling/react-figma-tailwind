@@ -1,11 +1,18 @@
 import * as React from 'react'
+import tailwind from 'tailwind-rn';
 import { Frame, Page, View, Text, Component, StyleSheet } from 'react-figma'
 
+// @ts-ignore
 import facebookIcon from './icons/001-facebook.png'
+// @ts-ignore
 import twitterIcon from './icons/002-twitter.png'
+// @ts-ignore
 import whatsappIcon from './icons/003-whatsapp.png'
+// @ts-ignore
 import skypeIcon from './icons/006-skype.png'
+// @ts-ignore
 import youtubeIcon from './icons/008-youtube.png'
+// @ts-ignore
 import instagramIcon from './icons/011-instagram.png'
 
 const styles = StyleSheet.create({
@@ -43,7 +50,7 @@ const styles = StyleSheet.create({
 
 const SpaceFrame = () => {
   return (
-    <Frame name="Space" style={styles.frame}>
+    <div name="Space" style={tailwind('p-4')}>
       <Text style={styles.heading}>Space</Text>
 
       <Component name="SizingXSmall" style={styles.component}>
@@ -75,13 +82,13 @@ const SpaceFrame = () => {
       </Component>
       <Text style={styles.sizingDescription}>X-Large</Text>
       <Text style={styles.hint}>64px</Text>
-    </Frame>
+    </div>
   )
 }
 
 const TypeFrame = (props) => {
   return (
-    <Frame name="Type" style={[styles.frame, props.style]}>
+    <div name="Type" style={tailwind('p-4 ml-16')}>
       <Text style={styles.heading}>Type</Text>
 
       <Component name="HeaderH1" style={styles.component}>
@@ -118,13 +125,13 @@ const TypeFrame = (props) => {
         <Text style={{ fontSize: 11 }}>X-Small text</Text>
       </Component>
       <Text style={styles.hint}>11px</Text>
-    </Frame>
+    </div>
   )
 }
 
 const IconsFrame = (props) => {
   return (
-    <Frame name="Icons" style={[styles.frame, props.style]}>
+    <div name="Icons" style={tailwind('p-4 ml-16')}>
       <Text style={styles.heading}>Icons</Text>
 
       <Component name="IconFacebook" style={styles.component}>
@@ -145,7 +152,7 @@ const IconsFrame = (props) => {
       <Component name="IconInstagram" style={styles.component}>
         <View style={[styles.icon, { backgroundImage: instagramIcon }]} />
       </Component>
-    </Frame>
+    </div>
   )
 }
 
@@ -153,8 +160,8 @@ export const App = () => {
   return (
     <Page isCurrent name="Design system" style={{ flexDirection: 'row' }}>
       <SpaceFrame />
-      <TypeFrame style={{ marginLeft: 50 }} />
-      <IconsFrame style={{ marginLeft: 50 }} />
+      <TypeFrame />
+      <IconsFrame />
     </Page>
   )
 }

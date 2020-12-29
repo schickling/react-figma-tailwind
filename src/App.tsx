@@ -130,28 +130,22 @@ const IconsFrame = (props) => {
       <Text style={styles.heading}>Icons</Text>
 
       <Component name="IconFacebook" style={styles.component}>
-        <View
-          style={[styles.icon, { backgroundImage: facebookIcon.default }]}
-        />
+        <View style={[styles.icon, { backgroundImage: facebookIcon }]} />
       </Component>
       <Component name="IconTwitter" style={styles.component}>
-        <View style={[styles.icon, { backgroundImage: twitterIcon.default }]} />
+        <View style={[styles.icon, { backgroundImage: twitterIcon }]} />
       </Component>
       <Component name="IconWhatsapp" style={styles.component}>
-        <View
-          style={[styles.icon, { backgroundImage: whatsappIcon.default }]}
-        />
+        <View style={[styles.icon, { backgroundImage: whatsappIcon }]} />
       </Component>
       <Component name="IconSkype" style={styles.component}>
-        <View style={[styles.icon, { backgroundImage: skypeIcon.default }]} />
+        <View style={[styles.icon, { backgroundImage: skypeIcon }]} />
       </Component>
       <Component name="IconYoutube" style={styles.component}>
-        <View style={[styles.icon, { backgroundImage: youtubeIcon.default }]} />
+        <View style={[styles.icon, { backgroundImage: youtubeIcon }]} />
       </Component>
       <Component name="IconInstagram" style={styles.component}>
-        <View
-          style={[styles.icon, { backgroundImage: instagramIcon.default }]}
-        />
+        <View style={[styles.icon, { backgroundImage: instagramIcon }]} />
       </Component>
     </Frame>
   )

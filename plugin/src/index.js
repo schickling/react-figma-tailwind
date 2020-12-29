@@ -8,6 +8,12 @@ const ELEMENT_REPLACEMENT_MAP = {
 function declare(api, options, dirname) {
     api.assertVersion(7);
 
+    function transformJSXElement(path) {
+        if (ELEMENT_REPLACEMENT_MAP[path.name]) {
+            path.name = ELEMENT_REPLACEMENT_MAP[path.name];
+        }
+    }
+
     return {
         name: "babel-plugin-react-figma-tailwind",
         inherits: syntaxJSX,
@@ -15,11 +21,11 @@ function declare(api, options, dirname) {
         visitor: {
             Program(programPath) {
                 programPath.traverse({
-                    JSXIdentifier: function(path) {
-                        if (ELEMENT_REPLACEMENT_MAP[path.node.name]) {
-                            const newJSXIdentifier = t.jsxIdentifier(ELEMENT_REPLACEMENT_MAP[path.node.name])
-                            path.replaceWith(newJSXIdentifier);
-                        }
+                    JSXOpeningElement: function(path) {
+                        transformJSXElement(path.node.name)
+                    },
+                    JSXClosingElement: function(path) {
+                        transformJSXElement(path.node.name)
                     }
                 });
             }

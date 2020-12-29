@@ -17,7 +17,7 @@ export const Div: FC<{
   if (__render_figma__ === 1) {
     const style = tailwind(className)
     if (children && typeof children === 'string') {
-      return <Text style={style}>{children}</Text>
+      return <Text style={[{fontFamily: "Roboto"}, style]}>{children}</Text>
     }
     return <View style={style}>{children}</View>
   }

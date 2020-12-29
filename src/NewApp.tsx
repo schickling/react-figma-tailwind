@@ -1,19 +1,13 @@
 import * as React from 'react'
-import tailwind from 'tailwind-rn';
 import { Frame, Page, View, Text, Component, StyleSheet } from 'react-figma'
+import { Div } from './base-components'
 
-// @ts-ignore
-import facebookIcon from './icons/001-facebook.png'
-// @ts-ignore
-import twitterIcon from './icons/002-twitter.png'
-// @ts-ignore
-import whatsappIcon from './icons/003-whatsapp.png'
-// @ts-ignore
-import skypeIcon from './icons/006-skype.png'
-// @ts-ignore
-import youtubeIcon from './icons/008-youtube.png'
-// @ts-ignore
-import instagramIcon from './icons/011-instagram.png'
+import * as facebookIcon from './icons/001-facebook.png'
+import * as twitterIcon from './icons/002-twitter.png'
+import * as whatsappIcon from './icons/003-whatsapp.png'
+import * as skypeIcon from './icons/006-skype.png'
+import * as youtubeIcon from './icons/008-youtube.png'
+import * as instagramIcon from './icons/011-instagram.png'
 
 const styles = StyleSheet.create({
   frame: {
@@ -52,45 +46,45 @@ const styles = StyleSheet.create({
 
 const SpaceFrame = () => {
   return (
-    <div name="Space" style={tailwind('p-4')}>
+    <Frame name="Space" style={styles.frame}>
       <Text style={styles.heading}>Space</Text>
 
       <Component name="SizingXSmall" style={styles.component}>
-        <div style={[styles.sizingBlock, { width: 8, height: 8 }]} />
+        <View style={[styles.sizingBlock, { width: 8, height: 8 }]} />
       </Component>
-      <Text style={styles.sizingDescription}>X-Small</Text>
-      <Text style={styles.hint}>8px</Text>
+      <Div className="mt-1 text-sm">X-Small</Div>
+      <Div className="text-xs mt-0.5 text-gray-500">8px</Div>
 
       <Component name="SizingSmall" style={styles.component}>
-        <div style={[styles.sizingBlock, { width: 16, height: 16 }]} />
+        <View style={[styles.sizingBlock, { width: 16, height: 16 }]} />
       </Component>
-      <Text style={styles.sizingDescription}>Small</Text>
-      <Text style={styles.hint}>16px</Text>
+      {/* <Div style={styles.sizingDescription}>Small</Div>
+      <Div style={styles.hint}>16px</Div> */}
 
       <Component name="SizingMedium" style={styles.component}>
-        <div style={[styles.sizingBlock, { width: 24, height: 24 }]} />
+        <View style={[styles.sizingBlock, { width: 24, height: 24 }]} />
       </Component>
-      <Text style={styles.sizingDescription}>Medium</Text>
-      <Text style={styles.hint}>24px</Text>
+      {/* <Div style={styles.sizingDescription}>Medium</Div>
+      <Div style={styles.hint}>24px</Div> */}
 
       <Component name="SizingLarge" style={styles.component}>
-        <div style={[styles.sizingBlock, { width: 44, height: 44 }]} />
+        <View style={[styles.sizingBlock, { width: 44, height: 44 }]} />
       </Component>
       <Text style={styles.sizingDescription}>Large</Text>
       <Text style={styles.hint}>44px</Text>
 
       <Component name="SizingXLarge" style={styles.component}>
-        <div style={[styles.sizingBlock, { width: 64, height: 64 }]} />
+        <View style={[styles.sizingBlock, { width: 64, height: 64 }]} />
       </Component>
       <Text style={styles.sizingDescription}>X-Large</Text>
       <Text style={styles.hint}>64px</Text>
-    </div>
+    </Frame>
   )
 }
 
 const TypeFrame = (props) => {
   return (
-    <div name="Type" style={tailwind('p-4 ml-16')}>
+    <Frame name="Type" style={[styles.frame, props.style]}>
       <Text style={styles.heading}>Type</Text>
 
       <Component name="HeaderH1" style={styles.component}>
@@ -127,43 +121,53 @@ const TypeFrame = (props) => {
         <Text style={{ fontSize: 11 }}>X-Small text</Text>
       </Component>
       <Text style={styles.hint}>11px</Text>
-    </div>
+    </Frame>
   )
 }
 
 const IconsFrame = (props) => {
   return (
-    <div name="Icons" style={tailwind('p-4 ml-16')}>
+    <Frame name="Icons" style={[styles.frame, props.style]}>
       <Text style={styles.heading}>Icons</Text>
 
       <Component name="IconFacebook" style={styles.component}>
-        <View style={[styles.icon, { backgroundImage: facebookIcon }]} />
+        <View
+          style={[styles.icon, { backgroundImage: facebookIcon.default }]}
+        />
       </Component>
       <Component name="IconTwitter" style={styles.component}>
-        <View style={[styles.icon, { backgroundImage: twitterIcon }]} />
+        <View style={[styles.icon, { backgroundImage: twitterIcon.default }]} />
       </Component>
       <Component name="IconWhatsapp" style={styles.component}>
-        <View style={[styles.icon, { backgroundImage: whatsappIcon }]} />
+        <View
+          style={[styles.icon, { backgroundImage: whatsappIcon.default }]}
+        />
       </Component>
       <Component name="IconSkype" style={styles.component}>
-        <View style={[styles.icon, { backgroundImage: skypeIcon }]} />
+        <View style={[styles.icon, { backgroundImage: skypeIcon.default }]} />
       </Component>
       <Component name="IconYoutube" style={styles.component}>
-        <View style={[styles.icon, { backgroundImage: youtubeIcon }]} />
+        <View style={[styles.icon, { backgroundImage: youtubeIcon.default }]} />
       </Component>
       <Component name="IconInstagram" style={styles.component}>
-        <View style={[styles.icon, { backgroundImage: instagramIcon }]} />
+        <View
+          style={[styles.icon, { backgroundImage: instagramIcon.default }]}
+        />
       </Component>
-    </div>
+    </Frame>
   )
 }
 
-export const App = () => {
+export const NewApp = () => {
   return (
     <Page isCurrent name="Design system" style={{ flexDirection: 'row' }}>
       <SpaceFrame />
-      <TypeFrame />
-      <IconsFrame />
+      <Div className="inline-flex items-center px-6 py-3 bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <Div className="text-base font-medium text-white">Button text</Div>
+      </Div>
+
+      <TypeFrame style={{ marginLeft: 50 }} />
+      <IconsFrame style={{ marginLeft: 50 }} />
     </Page>
   )
 }

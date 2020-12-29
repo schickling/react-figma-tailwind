@@ -3,6 +3,7 @@
     "target": "es6",
     "module": "esnext",
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "typeRoots": ["./node_modules/@types", "./node_modules/@figma"]
   },

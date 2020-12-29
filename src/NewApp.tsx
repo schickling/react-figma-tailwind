@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Frame, Page, View, Text, Component, StyleSheet } from 'react-figma'
-import { Div } from './base-components'
 
 import * as facebookIcon from './icons/001-facebook.png'
 import * as twitterIcon from './icons/002-twitter.png'
@@ -52,8 +51,8 @@ const SpaceFrame = () => {
       <Component name="SizingXSmall" style={styles.component}>
         <View style={[styles.sizingBlock, { width: 8, height: 8 }]} />
       </Component>
-      <Div className="mt-1 text-sm">X-Small</Div>
-      <Div className="text-xs mt-0.5 text-gray-500">8px</Div>
+      <span className="mt-1 text-sm">X-Small</span>
+      <span className="text-xs mt-0.5 text-gray-500">8px</span>
 
       <Component name="SizingSmall" style={styles.component}>
         <View style={[styles.sizingBlock, { width: 16, height: 16 }]} />
@@ -162,9 +161,9 @@ export const NewApp = () => {
   return (
     <Page isCurrent name="Design system" style={{ flexDirection: 'row' }}>
       <SpaceFrame />
-      <Div className="inline-flex items-center px-6 py-3 bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-        <Div className="text-base font-medium text-white">Button text</Div>
-      </Div>
+      <div className="inline-flex items-center px-6 py-3 bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <span className="text-base font-medium text-white">Button text</span>
+      </div>
 
       <TypeFrame style={{ marginLeft: 50 }} />
       <IconsFrame style={{ marginLeft: 50 }} />

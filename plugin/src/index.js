@@ -1,19 +1,9 @@
 const t = require("@babel/types");
 const syntaxJSX = require("@babel/plugin-syntax-jsx").default;
 
-const ELEMENT_REPLACEMENT_MAP = {
-    div: 'View',
-    span: 'Text'
-}
-
 function declare(api, options, dirname) {
     api.assertVersion(7);
 
-    function transformJSXElement(path) {
-        if (ELEMENT_REPLACEMENT_MAP[path.name]) {
-            path.name = ELEMENT_REPLACEMENT_MAP[path.name];
-        }
-    }
 
     return {
         name: "babel-plugin-react-figma-tailwind",
@@ -23,11 +13,17 @@ function declare(api, options, dirname) {
             Program(programPath) {
                 let needTailwindImport = false;
                 programPath.traverse({
-                    JSXOpeningElement: function(path) {
-                        transformJSXElement(path.node.name)
-                    },
-                    JSXClosingElement: function(path) {
-                        transformJSXElement(path.node.name)
+                    JSXElement: function(path) {
+                        const openingElement = path.node.openingElement;
+                        const closingElement = path.node.closingElement;
+                        const children = path.node.children || [];
+                        const isTextElement = children.find(t.isJSXText) && !children.find(t.isJSXElement);
+                        if (openingElement) {
+                            openingElement.name.name = isTextElement ? "Text" : "View";
+                        }
+                        if (closingElement) {
+                            closingElement.name.name = isTextElement ? "Text" : "View";
+                        }
                     },
                     JSXAttribute: function (path) {
                         if (path.node.name.name === "className") {

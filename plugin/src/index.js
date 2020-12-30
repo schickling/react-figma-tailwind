@@ -25,10 +25,10 @@ function declare(api, options, dirname) {
                         const children = path.node.children || [];
                         const isTextElement = children.find(t.isJSXText) && !children.find(t.isJSXElement);
                         if (openingElement) {
-                            openingElement.name.name = isTextElement ? "Text" : "View";
+                            openingElement.name = t.jsxMemberExpression(t.jsxIdentifier("ReactFigma"), t.jsxIdentifier(isTextElement ? "Text" : "View"));
                         }
                         if (closingElement) {
-                            closingElement.name.name = isTextElement ? "Text" : "View";
+                            closingElement.name = t.jsxMemberExpression(t.jsxIdentifier("ReactFigma"), t.jsxIdentifier(isTextElement ? "Text" : "View"));
                         }
                         needReactFigmaImport = true;
                     },
@@ -54,8 +54,7 @@ function declare(api, options, dirname) {
                     programPath.node.body.unshift(
                         t.importDeclaration(
                             [
-                                t.importSpecifier(t.identifier("View"), t.identifier("View")),
-                                t.importSpecifier(t.identifier("Text"), t.identifier("Text"))
+                                t.importNamespaceSpecifier(t.identifier("ReactFigma"))
                             ],
                             t.stringLiteral("react-figma")
                         )

@@ -1,6 +1,6 @@
-import { View, Text } from "react-figma";
+import * as ReactFigma from "react-figma";
 import React from "react";
 
 const Comp = props => {
-  return <View />;
+  return <ReactFigma.View />;
 };

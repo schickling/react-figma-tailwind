@@ -1,11 +1,17 @@
 import * as React from 'react'
 import { Frame, Page, View, Text, Component, StyleSheet } from 'react-figma'
 
+// @ts-ignore
 import * as facebookIcon from './icons/001-facebook.png'
+// @ts-ignore
 import * as twitterIcon from './icons/002-twitter.png'
+// @ts-ignore
 import * as whatsappIcon from './icons/003-whatsapp.png'
+// @ts-ignore
 import * as skypeIcon from './icons/006-skype.png'
+// @ts-ignore
 import * as youtubeIcon from './icons/008-youtube.png'
+// @ts-ignore
 import * as instagramIcon from './icons/011-instagram.png'
 
 const styles = StyleSheet.create({
@@ -171,7 +177,7 @@ export const NewApp = () => {
             <div className="block">Ready to dive in?</div>
             <div className="block">Start your free trial today.</div>
           </div>
-          <div className="flex justify-center mt-8">
+          <div className="flex flex-row justify-center mt-8">
             <div className="inline-flex rounded-md shadow">
               <div className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700">
                 Get started

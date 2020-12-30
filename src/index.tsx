@@ -26,6 +26,8 @@ ReactDOM.render(
 
 // Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
 // Learn more: https://snowpack.dev/concepts/hot-module-replacement
+// @ts-ignore
 if (import.meta.hot) {
+  // @ts-ignore
   import.meta.hot.accept()
 }

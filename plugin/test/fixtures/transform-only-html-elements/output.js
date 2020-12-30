@@ -6,9 +6,9 @@ const Comp = props => {
   return <Page>
             <View>
                 <ReactFigma.View style={tailwind("flex")}>
-                    <ReactFigma.Text style={tailwind("inline-flex items-center")}>
+                    <ReactFigma.View style={tailwind("inline-flex items-center")}><ReactFigma.Text>
                         some text
-                    </ReactFigma.Text>
+                    </ReactFigma.Text></ReactFigma.View>
                 </ReactFigma.View>
             </View>
             <Component>

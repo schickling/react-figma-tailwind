@@ -177,7 +177,7 @@ export const NewApp = () => {
             <div className="block">Ready to dive in?</div>
             <div className="block">Start your free trial today.</div>
           </div>
-          <div className="flex flex-row justify-center mt-8">
+          <div className="flex justify-center mt-8">
             <div className="inline-flex rounded-md shadow">
               <div className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700">
                 Get started

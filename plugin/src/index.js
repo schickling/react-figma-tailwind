@@ -57,9 +57,10 @@ function declare(api, options, dirname) {
                     JSXAttribute: function (path) {
                         if (path.node.name.name === "className") {
                             needTailwindImport = true;
+                            const defaultStyle = t.isJSXMemberExpression(path.parent.name) && path.parent.name.object.name === "ReactFigma"  && path.parent.name.property.name === "View" && (path.node.value && (path.node.value.value || "").split(/(\s+)/).indexOf("flex") >= 0) ? [t.objectExpression([t.objectProperty(t.identifier("flexDirection"), t.stringLiteral("row"))])] : [];
                             path.replaceWith(t.jsxAttribute(
                                 t.jsxIdentifier("style"),
-                                t.jsxExpressionContainer(t.callExpression(t.identifier("tailwind"), [path.node.value]))
+                                t.jsxExpressionContainer(t.arrayExpression([...defaultStyle, t.callExpression(t.identifier("tailwind"), [path.node.value])]))
                             ));
                         }
                     }

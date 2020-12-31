@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-// import { App } from './App'
-// import './index.css'
+import {Artboard} from "./Artboard";
+import 'tailwindcss/dist/tailwind.css';
 
 // function domToFigma(el: JSX.Element): JSX.Element {}
 
@@ -18,9 +18,7 @@ const x = (
 // window.x = x
 
 ReactDOM.render(
-  <React.StrictMode>
-    <div>hello</div>
-  </React.StrictMode>,
+  <Artboard />,
   document.getElementById('root'),
 )
 

@@ -1,5 +1,4 @@
 import * as React from 'react'
-// import { App } from './App'
 import { NewApp as App } from './NewApp'
 
 import 'react-figma/rpc'

@@ -58,10 +58,19 @@ function declare(api, options, dirname) {
                         if (path.node.name.name === "className") {
                             needTailwindImport = true;
                             const defaultStyle = t.isJSXMemberExpression(path.parent.name) && path.parent.name.object.name === "ReactFigma"  && path.parent.name.property.name === "View" && (path.node.value && (path.node.value.value || "").split(/(\s+)/).indexOf("flex") >= 0) ? [t.objectExpression([t.objectProperty(t.identifier("flexDirection"), t.stringLiteral("row"))])] : [];
+                            const allSiblings = [...path.getAllPrevSiblings(), ...path.getAllNextSiblings()];
+                            const styleNode = allSiblings.find(function (sibling) {
+                                return sibling.node && sibling.node.name.name === "style";
+                            });
+                            const previousStyle = styleNode && t.isJSXExpressionContainer(styleNode.node.value) ? [styleNode.node.value.expression] : [];
+
                             path.replaceWith(t.jsxAttribute(
                                 t.jsxIdentifier("style"),
-                                t.jsxExpressionContainer(t.arrayExpression([...defaultStyle, t.callExpression(t.identifier("tailwind"), [path.node.value])]))
+                                t.jsxExpressionContainer(t.arrayExpression([...previousStyle, ...defaultStyle, t.callExpression(t.identifier("tailwind"), [path.node.value])]))
                             ));
+                            if (styleNode) {
+                                styleNode.remove();
+                            }
                         }
                     }
                 });

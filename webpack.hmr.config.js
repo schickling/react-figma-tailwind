@@ -5,6 +5,7 @@ module.exports = configure({
   plugins: [
     new webpack.DefinePlugin({
       __render_figma__: 1,
+      "process.env.REACT_FIGMA_STYLE_INHERITANCE_ENABLED": "true"
     }),
   ],
     module: {

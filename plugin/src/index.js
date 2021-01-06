@@ -24,21 +24,12 @@ function declare(api, options, dirname) {
                         if (textValue.trim().length === 0 || !(parentOpeningElement.name.name && allHtmlElements.indexOf(parentOpeningElement.name.name) >= 0)) {
                             return;
                         }
-                        let textClassNames = [];
-
-                        path.findParent(function (path) {
-                            if (t.isJSXElement(path)) {
-                                const openingElement = path.node.openingElement;
-
-                                const parentClassNameAttribute = openingElement.attributes.find(function (attribute) {
-                                    return attribute.name && attribute.name.name === "className";
-                                });
-                                const parentClassName = parentClassNameAttribute && parentClassNameAttribute.value.value || "";
-                                const splittedClassName = parentClassName.split(/(\s+)/);
-                                const textClassesFromPath = splittedClassName.filter((name) => textClasses.indexOf(name) >= 0);
-                                textClassNames = [...textClassesFromPath, ...textClassNames]
-                            }
+                        const parentClassNameAttribute = parentOpeningElement.attributes.find(function (attribute) {
+                            return attribute.name && attribute.name.name === "className";
                         });
+                        const parentClassName = parentClassNameAttribute && parentClassNameAttribute.value.value || "";
+                        const spittedClassName = parentClassName.split(/(\s+)/);
+                        const textClassNames = spittedClassName.filter((name) => textClasses.indexOf(name) >= 0);
                         path.replaceWith(t.jsxElement(
                             t.jsxOpeningElement(t.jsxMemberExpression(t.jsxIdentifier("ReactFigma"), t.jsxIdentifier("Text")), textClassNames.length > 0 ? [
                                 t.jsxAttribute(t.jsxIdentifier("className"), t.stringLiteral(textClassNames.join(" ")))

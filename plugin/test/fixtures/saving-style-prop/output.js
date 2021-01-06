@@ -5,5 +5,7 @@ import React from "react";
 const Comp = props => {
   return <ReactFigma.View style={[{
     width: 360
+  }, {
+    alignItems: "stretch"
   }, tailwind("block")]} />;
 };

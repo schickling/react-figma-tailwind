@@ -4,6 +4,7 @@ import React from "react";
 
 const Comp = props => {
   return <ReactFigma.View style={[{
-    flexDirection: "row"
+    flexDirection: "row",
+    alignItems: "stretch"
   }, tailwind("flex items-center")]} />;
 };

@@ -37,7 +37,8 @@
     "babel-loader": "^8.2.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-figma": "0.5.0",
+    "react-figma": "0.5.1",
+    "tailwind-rf": "^3.0.0",
     "tailwind-rn": "^3.0.0",
     "tailwindcss": "^2.0.2"
   }

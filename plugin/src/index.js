@@ -96,7 +96,7 @@ function declare(api, options, dirname) {
                     programPath.node.body.unshift(
                         t.importDeclaration(
                             [t.importDefaultSpecifier(t.identifier("tailwind"))],
-                            t.stringLiteral("tailwind-rn")
+                            t.stringLiteral("tailwind-rf")
                         )
                     );
                 }

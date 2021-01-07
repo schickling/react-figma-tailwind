@@ -10,7 +10,8 @@ module.exports = configure({
     },
     plugins: [
         new webpack.DefinePlugin({
-            "process.env.REACT_FIGMA_STYLE_INHERITANCE_ENABLED": "true"
+            "process.env.REACT_FIGMA_STYLE_INHERITANCE_ENABLED": "true",
+            "process.env.REACT_FIGMA_WEB_DEFAULTS_ENABLED": "true"
         })
     ]
 })

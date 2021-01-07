@@ -1,9 +1,7 @@
 import * as ReactFigma from "react-figma";
-import tailwind from "tailwind-rn";
+import tailwind from "tailwind-rf";
 import React from "react";
 
 const Comp = props => {
-  return <ReactFigma.View style={[{
-    alignItems: "stretch"
-  }, tailwind("inline-flex items-center")]} />;
+  return <ReactFigma.View style={[tailwind("inline-flex items-center")]} />;
 };

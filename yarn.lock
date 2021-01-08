@@ -5769,10 +5769,10 @@ react-figma-webpack-config@^0.0.7:
     webpack "^4.41.2"
     webpack-merge "^4.2.2"
 
-react-figma@0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/react-figma/-/react-figma-0.5.1.tgz#5824d9a46e269110fcea4613962d8f9c92d4e68d"
-  integrity sha512-gIRwkLXBzfCoIyn6kL2l2qNenwJfOqz4bhikOkqGSs9hJlYw9t6K4/u5rzM8hOQ6kA1No6RcEtUcbQM+t+Ehzg==
+react-figma@0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/react-figma/-/react-figma-0.5.2.tgz#a3cf0f31ff42578dea0339552b4b9f1b735e70fd"
+  integrity sha512-Ewq2cppEJNW5Un8cK31cwBCIuPpWDGsVj+oS50vfHnDhmDZDQRr3G35ZRjSuazB8NClxkFwvDrHjNVeipnBt3w==
   dependencies:
     color-parse "1.3.8"
     figma-jsonrpc "^0.4.0"

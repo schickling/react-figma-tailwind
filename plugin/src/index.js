@@ -75,7 +75,7 @@ function declare(api, options, dirname) {
                         if (path.node.name.name === "src") {
                             path.replaceWith(t.jsxAttribute(
                                 t.jsxIdentifier("source"),
-                                t.jsxExpressionContainer(t.objectExpression([t.objectProperty(t.identifier("uri"), path.node.value)]))
+                                t.jsxExpressionContainer(t.objectExpression([t.objectProperty(t.identifier("uri"), t.isJSXExpressionContainer(path.node.value) ? path.node.value.expression : path.node.value)]))
                             ));
                         }
                     }

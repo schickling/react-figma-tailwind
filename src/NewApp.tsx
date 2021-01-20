@@ -4,6 +4,8 @@ import {Artboard} from "./Artboard";
 
 const styles = StyleSheet.create({
     page: {
+        fontSize: 16,
+        lineHeight: "150%",
         flexDirection: 'row',
         fontFamily: "Inter"
     }

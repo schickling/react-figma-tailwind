@@ -18,7 +18,10 @@ const x = (
 // window.x = x
 
 ReactDOM.render(
-  <Artboard />,
+    <div style={{display: "flex"}}>
+        <Artboard />
+    </div>
+  ,
   document.getElementById('root'),
 )
 
